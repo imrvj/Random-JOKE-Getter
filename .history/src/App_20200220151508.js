@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 
 function App() {
   const [fname, setfname] = useState('John')
@@ -27,8 +26,8 @@ function App() {
   return (
     <div>
       <h1>JOKE APP</h1>
-      <input value={fname} onChange={(e)=>setfname(e.target.value)}></input>
-      <input value={lname} onChange={(e)=>setlname(e.target.value)}></input>
+      <input ></input>
+      <input></input>
   <h2>{joke}</h2>
   <button onClick={()=>dothis(fname,lname)}>click me</button>
     </div>

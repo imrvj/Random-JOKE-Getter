@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 
 function App() {
   const [fname, setfname] = useState('John')
   const [lname, setlname] = useState('wick')
   const [joke, setjoke] = useState("Loading")
   useEffect(() => {
-    dothis(fname,lname)
+    dothis()
 
       
   }, []);
 
-   const dothis=(first,second)=>
+   const dothis=()=>
       {
-        fetch( `http://api.icndb.com/jokes/random?firstName=${first}&;lastName=${second}`)
+        fetch('http://api.icndb.com/jokes/random?firstName=Ranviay&;lastName=Singh')
         .then(res=>res.json())
         .then(result=>
           {
@@ -27,10 +26,10 @@ function App() {
   return (
     <div>
       <h1>JOKE APP</h1>
-      <input value={fname} onChange={(e)=>setfname(e.target.value)}></input>
-      <input value={lname} onChange={(e)=>setlname(e.target.value)}></input>
+      <input></input>
+      <input></input>
   <h2>{joke}</h2>
-  <button onClick={()=>dothis(fname,lname)}>click me</button>
+  <button onClick={dothis}>click me</button>
     </div>
   )
 }
